@@ -38,7 +38,7 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let object = objects[(indexPath as NSIndexPath).row]
-        cell.textLabel!.text = object.name
+        cell.textLabel!.text = object.getDisplayName()
         if !object.hasWiki {
             cell.backgroundColor = UIColor.gray
         }

@@ -11,6 +11,11 @@ import Foundation
 class Repository {
     
     var name = ""
+    var userLoginName = ""
     var hasWiki = false
+    
+    func getDisplayName() -> String {
+        return (name != "" && userLoginName != "") ? "\(userLoginName), \(name)" : ""
+    }
     
 }
