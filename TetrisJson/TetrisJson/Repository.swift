@@ -15,7 +15,7 @@ class Repository {
     var hasWiki = false
     
     func getDisplayName() -> String {
-        return (name != "" && userLoginName != "") ? "\(userLoginName), \(name)" : ""
+        return (name != "" || userLoginName != "") ? "\(userLoginName), \(name)" : ""
     }
     
 }

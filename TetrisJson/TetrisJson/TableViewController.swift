@@ -17,7 +17,6 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         getJsonData(url: sourceUrl)
     }
 
@@ -53,24 +52,21 @@ class TableViewController: UITableViewController {
             (data, response, error) -> Void in
             
             let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            if (statusCode == 200) {
+            if (httpResponse.statusCode == 200) {
                 do {
-                    let dictionary = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as? [String: AnyObject]
-                    self.createRepositoriesFromDictionary(dictionary: dictionary!)
+                    if let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as? [String: AnyObject] {
+                        self.createRepositoriesFromDictionary(dictionary: json)
+                    }
                 } catch let error as NSError {
                     print(error)
                 }
             }
         }
-        
         task.resume()
     }
     
     func createRepositoriesFromDictionary(dictionary: [String: AnyObject]) {
         if let items = dictionary["items"] as? [String: AnyObject] {
-            
             for currentItem in items {
                 let newRepository = Repository()
 //                if let name = currentItem["name"] as? String {
