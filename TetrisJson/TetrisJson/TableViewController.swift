@@ -11,6 +11,7 @@ import UIKit
 class TableViewController: UITableViewController {
 
     let sourceUrl = "https://api.github.com/search/repositories?q=%20tetris"
+    var objects = [Repository]()
     
     // MARK: - Setup functions
     
@@ -31,11 +32,16 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return objects.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let object = objects[(indexPath as NSIndexPath).row]
+        cell.textLabel!.text = object.name
+        if !object.hasWiki {
+            cell.backgroundColor = UIColor.gray
+        }
         return cell
     }
     
@@ -50,10 +56,9 @@ class TableViewController: UITableViewController {
             let statusCode = httpResponse.statusCode
             
             if (statusCode == 200) {
-                print("downloaded successful")
                 do {
-                    let dictionary = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as? [String : AnyObject]
-                    print(dictionary)
+                    let dictionary = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as? [String: AnyObject]
+                    self.createRepositoriesFromDictionary(dictionary: dictionary!)
                 } catch let error as NSError {
                     print(error)
                 }
@@ -63,6 +68,20 @@ class TableViewController: UITableViewController {
         task.resume()
     }
     
-    
+    func createRepositoriesFromDictionary(dictionary: [String: AnyObject]) {
+        if let items = dictionary["items"] as? [String: AnyObject] {
+            
+            for currentItem in items {
+                let newRepository = Repository()
+//                if let name = currentItem["name"] as? String {
+//                    newRepository.name = name
+//                }
+//                if let hasWiki = currentItem["has_wiki"] as? Bool {
+//                    newRepository.hasWiki = hasWiki
+//                }
+                objects.append(newRepository)
+            }
+        }
+    }
     
 }
