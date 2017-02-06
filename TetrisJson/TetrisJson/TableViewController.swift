@@ -17,7 +17,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var dictionary = Utilities.getJSonFileAsDictionary(sourceUrl)
+        getJsonData(url: sourceUrl)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,5 +38,31 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         return cell
     }
+    
+    func getJsonData(url: String = "") {
+        let requestURL: NSURL = NSURL(string: sourceUrl)!
+        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest as URLRequest) {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            if (statusCode == 200) {
+                print("downloaded successful")
+                do {
+                    let dictionary = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as? [String : AnyObject]
+                    print(dictionary)
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+        }
+        
+        task.resume()
+    }
+    
+    
     
 }
