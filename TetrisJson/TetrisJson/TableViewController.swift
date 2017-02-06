@@ -10,30 +10,14 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    let sourceUrl = "https://github.com/matthiaszarzecki/tetris_json.git"
+    let sourceUrl = "https://api.github.com/search/repositories?q=%20tetris"
     
     // MARK: - Setup functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: sourceUrl)
-        URLSession.shared.dataTask(with: url!, completionHandler: {
-            (data, response, error) in
-            if(error != nil){
-                print("error")
-            }else{
-                do{
-                    let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String : AnyObject]
-                    
-                    OperationQueue.main.addOperation({
-                    })
-                    
-                }catch let error as NSError{
-                    print(error)
-                }
-            }
-        }).resume()
+        var dictionary = Utilities.getJSonFileAsDictionary(sourceUrl)
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,5 +38,5 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         return cell
     }
-
+    
 }
