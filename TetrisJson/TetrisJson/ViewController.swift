@@ -12,14 +12,29 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let url = URL(string: "https://github.com/matthiaszarzecki/tetris_json.git")
+        URLSession.shared.dataTask(with: url!, completionHandler: {
+            (data, response, error) in
+            if(error != nil){
+                print("error")
+            }else{
+                do{
+                    let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String : AnyObject]
+                    
+                    OperationQueue.main.addOperation({
+                    })
+                    
+                }catch let error as NSError{
+                    print(error)
+                }
+            }
+        }).resume()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
 
 }
 
