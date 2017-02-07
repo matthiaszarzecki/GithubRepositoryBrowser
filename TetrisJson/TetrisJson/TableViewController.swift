@@ -19,6 +19,7 @@ class TableViewController: UITableViewController {
     
     var objects = [Repository]()
     let formatter = ByteCountFormatter()
+    let hasWikiColor = UIColor.init(colorLiteralRed: 0.1, green: 0.1, blue: 0.1, alpha: 0)
     
     // MARK: - Setup functions
     
@@ -59,8 +60,9 @@ class TableViewController: UITableViewController {
         cell.displayUserLoginName.text = object.userLoginName
         cell.displaySize.text = getFileSizeDisplay(sizeInKB: object.size)
         if object.hasWiki {
-            cell.backgroundColor = UIColor.init(colorLiteralRed: 0.1, green: 0.1, blue: 0.1, alpha: 0)
+            cell.backgroundColor = hasWikiColor
         } else {
+            cell.backgroundColor = UIColor.white
             cell.displayWiki.text = ""
         }
         return cell
