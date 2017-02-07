@@ -14,8 +14,8 @@ class RepositorySearchController: UITableViewController {
     let baseURL = "https://api.github.com/search/"
     let searchType = "repositories"
     let searchTerm = "tetris"
-    let numberOfResults = 30
-    var currentResultPage = 1
+    let numberOfResults = 10
+    var currentResultPage = 0
     
     var objects = [Repository]()
     let formatter = ByteCountFormatter()
@@ -26,17 +26,22 @@ class RepositorySearchController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let request = "\(baseURL)\(searchType)?q=\(searchTerm)&page=\(currentResultPage)per_page=\(numberOfResults)"
-        
-        if let url = URL(string: request) {
-            if let data = try? Data(contentsOf: url) {
-                createRepositoriesFromJsonData(json: JSON(data: data))
-            }
-        }
+        setupViewWithResults(number: numberOfResults)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func setupViewWithResults(number: Int) {
+        currentResultPage += 1
+        let request = "\(baseURL)\(searchType)?q=\(searchTerm)&page=\(currentResultPage)per_page=\(numberOfResults)"
+        print(request)
+        if let url = URL(string: request) {
+            if let data = try? Data(contentsOf: url) {
+                createRepositoriesFromJsonData(json: JSON(data: data), number: numberOfResults, currentPage: currentResultPage)
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -54,6 +59,10 @@ class RepositorySearchController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row >= objects.count - 1 {
+            loadMoreResults()
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RepositoryCell
         let object = objects[(indexPath as NSIndexPath).row]
         cell.displayRepositoryName.text = object.repositoryName
@@ -70,14 +79,25 @@ class RepositorySearchController: UITableViewController {
     
     // MARK: Internal functions
     
-    func createRepositoriesFromJsonData(json: JSON) {
-        for currentItem in json["items"].arrayValue {
-            objects.append(Repository(repositoryName: currentItem["name"].stringValue, userLoginName: currentItem["owner"]["login"].stringValue, hasWiki: currentItem["has_wiki"].boolValue, size: currentItem["size"].intValue))
+    func createRepositoriesFromJsonData(json: JSON, number: Int = 10, currentPage: Int) {
+        let startIndex = (currentPage - 1) * number
+        let endIndex = currentPage * number - 1
+        let data = json["items"].arrayValue
+        if endIndex <= data.count - 1 {
+            for index in startIndex...endIndex {
+                let currentItem = data[index]
+                objects.append(Repository(repositoryName: currentItem["name"].stringValue, userLoginName: currentItem["owner"]["login"].stringValue, hasWiki: currentItem["has_wiki"].boolValue, size: currentItem["size"].intValue))
+            }
         }
+        tableView.reloadData()
     }
     
     func getFileSizeDisplay(sizeInKB: Int) -> String {
         return formatter.string(fromByteCount: Int64(sizeInKB * 1024))
+    }
+    
+    func loadMoreResults() {
+        setupViewWithResults(number: numberOfResults)
     }
     
 }
