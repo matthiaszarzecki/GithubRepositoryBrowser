@@ -29,14 +29,14 @@ class RepositorySearchController: UITableViewController {
         super.viewDidLoad()
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         searchBar.text = searchTerm
-        setupViewWithResults(number: numberOfResults)
+        setupViewWithResults()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func setupViewWithResults(number: Int) {
+    func setupViewWithResults() {
         currentResultPage += 1
         let request = "\(baseURL)\(searchType)?q=\(searchTerm)&page=\(currentResultPage)&per_page=\(numberOfResults)"
         if let url = URL(string: request) {
@@ -62,7 +62,7 @@ class RepositorySearchController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row >= objects.count - 1 {
-            setupViewWithResults(number: numberOfResults)
+            setupViewWithResults()
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RepositoryCell
@@ -91,7 +91,7 @@ class RepositorySearchController: UITableViewController {
         currentResultPage = 0
         objects = [Repository]()
         self.searchTerm = searchTerm
-        setupViewWithResults(number: numberOfResults)
+        setupViewWithResults()
     }
     
     // MARK: Internal functions
