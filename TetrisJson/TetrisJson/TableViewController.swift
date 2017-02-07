@@ -11,7 +11,12 @@ import SwiftyJSON
 
 class TableViewController: UITableViewController {
 
-    let sourceUrl = "https://api.github.com/search/repositories?q=%20tetris"
+    let baseURL = "https://api.github.com/search/"
+    let searchType = "repositories"
+    let searchTerm = "tetris"
+    let numberOfResults = 30
+    var currentResultPage = 1
+    
     var objects = [Repository]()
     
     // MARK: - Setup functions
@@ -19,7 +24,9 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let url = URL(string: sourceUrl) {
+        let request = "\(baseURL)\(searchType)?q=\(searchTerm)&page=\(currentResultPage)per_page=\(numberOfResults)"
+        
+        if let url = URL(string: request) {
             if let data = try? Data(contentsOf: url) {
                 createRepositoriesFromDictionary(dictionary: JSON(data: data))
             }
