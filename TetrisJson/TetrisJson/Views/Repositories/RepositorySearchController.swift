@@ -25,7 +25,6 @@ class RepositorySearchController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupViewWithResults(number: numberOfResults)
     }
 
@@ -36,7 +35,6 @@ class RepositorySearchController: UITableViewController {
     func setupViewWithResults(number: Int) {
         currentResultPage += 1
         let request = "\(baseURL)\(searchType)?q=\(searchTerm)&page=\(currentResultPage)&per_page=\(numberOfResults)"
-        print(request)
         if let url = URL(string: request) {
             if let data = try? Data(contentsOf: url) {
                 createRepositoriesFromJsonData(json: JSON(data: data), number: numberOfResults, currentPage: currentResultPage)
