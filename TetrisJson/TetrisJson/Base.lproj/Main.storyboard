@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Repository Search Controller-->
         <scene sceneID="RY1-oC-iT5">
             <objects>
-                <tableViewController id="xyA-hi-4oM" customClass="TableViewController" customModule="TetrisJson" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xyA-hi-4oM" customClass="RepositorySearchController" customModule="TetrisJson" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="68" sectionHeaderHeight="18" sectionFooterHeight="18" id="n3Y-Rb-oh3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

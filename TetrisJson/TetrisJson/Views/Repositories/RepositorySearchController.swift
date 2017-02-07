@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class TableViewController: UITableViewController {
+class RepositorySearchController: UITableViewController {
 
     let baseURL = "https://api.github.com/search/"
     let searchType = "repositories"
