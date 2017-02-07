@@ -30,7 +30,7 @@ class RepositorySearchController: UITableViewController {
         
         if let url = URL(string: request) {
             if let data = try? Data(contentsOf: url) {
-                createRepositoriesFromDictionary(dictionary: JSON(data: data))
+                createRepositoriesFromJsonData(json: JSON(data: data))
             }
         }
     }
@@ -70,8 +70,8 @@ class RepositorySearchController: UITableViewController {
     
     // MARK: Internal functions
     
-    func createRepositoriesFromDictionary(dictionary: JSON) {
-        for currentItem in dictionary["items"].arrayValue {
+    func createRepositoriesFromJsonData(json: JSON) {
+        for currentItem in json["items"].arrayValue {
             objects.append(Repository(repositoryName: currentItem["name"].stringValue, userLoginName: currentItem["owner"]["login"].stringValue, hasWiki: currentItem["has_wiki"].boolValue, size: currentItem["size"].intValue))
         }
     }
