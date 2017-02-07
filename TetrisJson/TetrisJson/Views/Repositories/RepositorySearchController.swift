@@ -82,6 +82,7 @@ class RepositorySearchController: UITableViewController {
     // MARK: Search bar functions
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
         if let text = searchBar.text {
             search(searchTerm: text)
         }
