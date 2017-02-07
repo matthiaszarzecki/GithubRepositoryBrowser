@@ -18,6 +18,7 @@ class TableViewController: UITableViewController {
     var currentResultPage = 1
     
     var objects = [Repository]()
+    let formatter = ByteCountFormatter()
     
     // MARK: - Setup functions
     
@@ -52,7 +53,7 @@ class TableViewController: UITableViewController {
         let object = objects[(indexPath as NSIndexPath).row]
         cell.displayRepositoryName.text = object.repositoryName
         cell.displayUserLoginName.text = object.userLoginName
-        cell.displaySize.text = "\(object.size) kb"
+        cell.displaySize.text = getFileSizeDisplay(sizeInKB: object.size)
         if object.hasWiki {
             cell.backgroundColor = UIColor.init(colorLiteralRed: 0.1, green: 0.1, blue: 0.1, alpha: 0)
         } else {
@@ -69,6 +70,10 @@ class TableViewController: UITableViewController {
             let newRepository = Repository(repositoryName: currentItem["name"].stringValue, userLoginName: currentItem["owner"]["login"].stringValue, hasWiki: currentItem["has_wiki"].boolValue, size: currentItem["size"].intValue)
             objects.append(newRepository)
         }
+    }
+    
+    func getFileSizeDisplay(sizeInKB: Int) -> String {
+        return formatter.string(fromByteCount: Int64(sizeInKB * 1024))
     }
     
 }
