@@ -63,6 +63,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="displayRepositoryName" destination="Rxm-Yv-WQt" id="hBn-nk-2uF"/>
                                     <outlet property="displaySize" destination="EZo-sw-hnA" id="6xz-23-xWX"/>
