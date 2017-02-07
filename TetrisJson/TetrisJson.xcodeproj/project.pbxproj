@@ -18,15 +18,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		39F1EFDC1E499D720062D785 /* RepositoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		39F1EFDC1E499D720062D785 /* RepositoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryCell.swift; path = ../Views/Repositories/RepositoryCell.swift; sourceTree = "<group>"; };
 		6C519BA71E48E7F5008A1DA8 /* TetrisJson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TetrisJson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C519BAA1E48E7F5008A1DA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C519BAF1E48E7F5008A1DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6C519BB11E48E7F5008A1DA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = TetrisJson/Assets/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		6C519BB41E48E7F5008A1DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C519BB61E48E7F5008A1DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C519BBE1E48F238008A1DA8 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		6C519BC21E4905A8008A1DA8 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		6C519BBE1E48F238008A1DA8 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../Views/Repositories/TableViewController.swift; sourceTree = "<group>"; };
+		6C519BC21E4905A8008A1DA8 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Repository.swift; path = ../Views/Repositories/Repository.swift; sourceTree = "<group>"; };
 		772C80CBC5B8264227AD5D6E /* Pods_TetrisJson.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TetrisJson.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		895CB9A2FE66A7EFE61BDCAA /* Pods-TetrisJson.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisJson.release.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisJson/Pods-TetrisJson.release.xcconfig"; sourceTree = "<group>"; };
 		8A7026BB0CDF1C615DE8F0B9 /* Pods-TetrisJson.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisJson.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisJson/Pods-TetrisJson.debug.xcconfig"; sourceTree = "<group>"; };
@@ -52,7 +52,8 @@
 				6C519BC21E4905A8008A1DA8 /* Repository.swift */,
 				39F1EFDC1E499D720062D785 /* RepositoryCell.swift */,
 			);
-			path = Repositories;
+			name = Repositories;
+			path = ../Repositories;
 			sourceTree = "<group>";
 		};
 		39F1EFE01E49AFEB0062D785 /* Assets */ = {
@@ -69,7 +70,17 @@
 			children = (
 				6C519BB31E48E7F5008A1DA8 /* LaunchScreen.storyboard */,
 			);
-			path = Launch;
+			name = Launch;
+			path = ../Launch;
+			sourceTree = "<group>";
+		};
+		39F1EFE21E49B0AE0062D785 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				39F1EFE11E49B03F0062D785 /* Launch */,
+				39F1EFDE1E49ADF60062D785 /* Repositories */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		3D64BCFBB2CBECAACD4CA86B /* Pods */ = {
@@ -102,9 +113,8 @@
 		6C519BA91E48E7F5008A1DA8 /* TetrisJson */ = {
 			isa = PBXGroup;
 			children = (
-				39F1EFE11E49B03F0062D785 /* Launch */,
 				39F1EFE01E49AFEB0062D785 /* Assets */,
-				39F1EFDE1E49ADF60062D785 /* Repositories */,
+				39F1EFE21E49B0AE0062D785 /* Views */,
 				6C519BAA1E48E7F5008A1DA8 /* AppDelegate.swift */,
 			);
 			path = TetrisJson;
