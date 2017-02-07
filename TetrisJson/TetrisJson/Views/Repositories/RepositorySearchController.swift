@@ -87,6 +87,13 @@ class RepositorySearchController: UITableViewController {
         }
     }
     
+    func search(searchTerm: String) {
+        currentResultPage = 0
+        objects = [Repository]()
+        self.searchTerm = searchTerm
+        setupViewWithResults(number: numberOfResults)
+    }
+    
     // MARK: Internal functions
     
     func createRepositoriesFromJsonData(json: JSON, number: Int = 10, currentPage: Int) {
@@ -98,13 +105,6 @@ class RepositorySearchController: UITableViewController {
     
     func getFileSizeDisplay(sizeInKB: Int) -> String {
         return formatter.string(fromByteCount: Int64(sizeInKB * 1024))
-    }
-    
-    func search(searchTerm: String) {
-        currentResultPage = 0
-        objects = [Repository]()
-        self.searchTerm = searchTerm
-        setupViewWithResults(number: numberOfResults)
     }
     
 }
