@@ -65,6 +65,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="displayHasWiki" destination="T45-sj-juk" id="K0k-Go-Zv6"/>
                                     <outlet property="displayRepositoryName" destination="Rxm-Yv-WQt" id="hBn-nk-2uF"/>
                                     <outlet property="displaySize" destination="EZo-sw-hnA" id="6xz-23-xWX"/>
                                     <outlet property="displayUserLoginName" destination="GVz-DL-4I5" id="I4c-Bz-MQv"/>

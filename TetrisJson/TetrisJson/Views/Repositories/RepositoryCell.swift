@@ -14,6 +14,6 @@ class RepositoryCell : UITableViewCell {
     @IBOutlet weak var displayRepositoryName: UILabel!
     @IBOutlet weak var displayUserLoginName: UILabel!
     @IBOutlet weak var displaySize: UILabel!
-    @IBOutlet weak var displayWiki: UILabel!
+    @IBOutlet weak var displayHasWiki: UILabel!
     
 }

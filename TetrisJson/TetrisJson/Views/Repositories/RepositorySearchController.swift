@@ -74,7 +74,7 @@ class RepositorySearchController: UITableViewController {
             cell.backgroundColor = hasWikiColor
         } else {
             cell.backgroundColor = UIColor.white
-            cell.displayWiki.text = ""
+            cell.displayHasWiki.text = ""
         }
         return cell
     }
