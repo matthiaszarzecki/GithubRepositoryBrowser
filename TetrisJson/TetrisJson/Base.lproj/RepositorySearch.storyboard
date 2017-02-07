@@ -13,7 +13,7 @@
         <scene sceneID="RY1-oC-iT5">
             <objects>
                 <tableViewController id="xyA-hi-4oM" customClass="RepositorySearchController" customModule="TetrisJson" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="68" sectionHeaderHeight="18" sectionFooterHeight="18" id="n3Y-Rb-oh3">
+                    <tableView key="view" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="68" sectionHeaderHeight="18" sectionFooterHeight="18" id="n3Y-Rb-oh3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>

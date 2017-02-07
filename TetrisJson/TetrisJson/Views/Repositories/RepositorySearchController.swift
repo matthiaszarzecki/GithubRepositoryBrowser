@@ -1,8 +1,8 @@
 //
-//  TableViewController.swift
+//  RepositorySearchController.swift
 //  TetrisJson
 //
-//  Created by  on 06.02.17.
+//  Created by Matthias Zarzecki on 06.02.17.
 //  Copyright © 2017 Matthias Zarzecki. All rights reserved.
 //
 
