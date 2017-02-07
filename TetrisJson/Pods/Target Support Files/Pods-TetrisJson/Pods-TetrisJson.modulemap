@@ -1,0 +1,6 @@
+framework module Pods_TetrisJson {
+  umbrella header "Pods-TetrisJson-umbrella.h"
+
+  export *
+  module * { export * }
+}
