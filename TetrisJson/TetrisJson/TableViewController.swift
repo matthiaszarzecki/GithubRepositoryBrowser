@@ -45,7 +45,7 @@ class TableViewController: UITableViewController {
         let object = objects[(indexPath as NSIndexPath).row]
         cell.displayRepositoryName.text = object.repositoryName
         cell.displayUserLoginName.text = object.userLoginName
-        cell.displaySize.text = "Size: \(object.size)"
+        cell.displaySize.text = "\(object.size) kb"
         if object.hasWiki {
             cell.backgroundColor = UIColor.init(colorLiteralRed: 0.1, green: 0.1, blue: 0.1, alpha: 0)
         } else {
