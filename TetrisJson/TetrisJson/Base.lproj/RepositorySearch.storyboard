@@ -76,6 +76,7 @@
                             <outlet property="delegate" destination="xyA-hi-4oM" id="UWz-0b-QS2"/>
                         </connections>
                     </tableView>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="EEf-BE-W4I" id="i4t-Kw-PXY"/>
                     </connections>

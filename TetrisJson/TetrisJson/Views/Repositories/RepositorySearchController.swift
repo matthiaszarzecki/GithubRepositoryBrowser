@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class RepositorySearchController: UITableViewController, UISearchBarDelegate {
+class RepositorySearchController: UITableViewController {
 
     let baseURL = "https://api.github.com/search/"
     let searchType = "repositories"
@@ -62,7 +62,7 @@ class RepositorySearchController: UITableViewController, UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row >= objects.count - 1 {
-            loadMoreResults()
+            setupViewWithResults(number: numberOfResults)
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RepositoryCell
@@ -98,10 +98,6 @@ class RepositorySearchController: UITableViewController, UISearchBarDelegate {
     
     func getFileSizeDisplay(sizeInKB: Int) -> String {
         return formatter.string(fromByteCount: Int64(sizeInKB * 1024))
-    }
-    
-    func loadMoreResults() {
-        setupViewWithResults(number: numberOfResults)
     }
     
     func search(searchTerm: String) {
