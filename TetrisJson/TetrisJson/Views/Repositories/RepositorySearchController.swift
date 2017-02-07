@@ -9,11 +9,11 @@
 import UIKit
 import SwiftyJSON
 
-class RepositorySearchController: UITableViewController {
+class RepositorySearchController: UITableViewController, UISearchBarDelegate {
 
     let baseURL = "https://api.github.com/search/"
     let searchType = "repositories"
-    let searchTerm = "tetris"
+    var searchTerm = "tetris"
     let numberOfResults = 10
     var currentResultPage = 0
     
@@ -21,10 +21,14 @@ class RepositorySearchController: UITableViewController {
     let formatter = ByteCountFormatter()
     let hasWikiColor = UIColor.init(colorLiteralRed: 0.1, green: 0.1, blue: 0.1, alpha: 0)
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     // MARK: - Setup functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        searchBar.text = searchTerm
         setupViewWithResults(number: numberOfResults)
     }
 
@@ -75,6 +79,14 @@ class RepositorySearchController: UITableViewController {
         return cell
     }
     
+    // MARK: Search bar functions
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            search(searchTerm: text)
+        }
+    }
+    
     // MARK: Internal functions
     
     func createRepositoriesFromJsonData(json: JSON, number: Int = 10, currentPage: Int) {
@@ -89,6 +101,13 @@ class RepositorySearchController: UITableViewController {
     }
     
     func loadMoreResults() {
+        setupViewWithResults(number: numberOfResults)
+    }
+    
+    func search(searchTerm: String) {
+        currentResultPage = 0
+        objects = [Repository]()
+        self.searchTerm = searchTerm
         setupViewWithResults(number: numberOfResults)
     }
     

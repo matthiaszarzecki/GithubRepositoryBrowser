@@ -13,13 +13,21 @@
         <scene sceneID="RY1-oC-iT5">
             <objects>
                 <tableViewController id="xyA-hi-4oM" customClass="RepositorySearchController" customModule="TetrisJson" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="68" sectionHeaderHeight="18" sectionFooterHeight="18" id="n3Y-Rb-oh3">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="68" sectionHeaderHeight="18" sectionFooterHeight="18" id="n3Y-Rb-oh3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="EEf-BE-W4I">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="xyA-hi-4oM" id="QbA-hg-DBO"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="68" id="yJD-Iw-kKe" customClass="RepositoryCell" customModule="TetrisJson" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="375" height="68"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yJD-Iw-kKe" id="IpU-Ng-NUt">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
@@ -68,6 +76,9 @@
                             <outlet property="delegate" destination="xyA-hi-4oM" id="UWz-0b-QS2"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="searchBar" destination="EEf-BE-W4I" id="i4t-Kw-PXY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLL-Y1-pJ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
