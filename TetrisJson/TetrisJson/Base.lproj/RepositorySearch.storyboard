@@ -69,7 +69,6 @@
                                     <outlet property="displayRepositoryName" destination="Rxm-Yv-WQt" id="hBn-nk-2uF"/>
                                     <outlet property="displaySize" destination="EZo-sw-hnA" id="6xz-23-xWX"/>
                                     <outlet property="displayUserLoginName" destination="GVz-DL-4I5" id="I4c-Bz-MQv"/>
-                                    <outlet property="displayWiki" destination="T45-sj-juk" id="AF2-BW-uIB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

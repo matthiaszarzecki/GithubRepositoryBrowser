@@ -158,11 +158,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Matthias Zarzecki";
 				TargetAttributes = {
 					6C519BA61E48E7F5008A1DA8 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = QDUTEX33CU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -300,6 +301,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -350,6 +352,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -380,6 +383,7 @@
 			baseConfigurationReference = 8A7026BB0CDF1C615DE8F0B9 /* Pods-TetrisJson.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QDUTEX33CU;
 				INFOPLIST_FILE = "$(SRCROOT)/TetrisJson/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthiaszarzecki.TetrisJson;
@@ -393,6 +397,7 @@
 			baseConfigurationReference = 895CB9A2FE66A7EFE61BDCAA /* Pods-TetrisJson.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QDUTEX33CU;
 				INFOPLIST_FILE = "$(SRCROOT)/TetrisJson/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthiaszarzecki.TetrisJson;
