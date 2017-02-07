@@ -41,11 +41,15 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RepositoryCell
         let object = objects[(indexPath as NSIndexPath).row]
-        cell.textLabel!.text = object.displayName
-        if !object.hasWiki {
+        cell.displayRepositoryName.text = object.repositoryName
+        cell.displayUserLoginName.text = object.userLoginName
+        cell.displaySize.text = "Size: \(object.size)"
+        if object.hasWiki {
             cell.backgroundColor = UIColor.init(colorLiteralRed: 0.1, green: 0.1, blue: 0.1, alpha: 0)
+        } else {
+            cell.displayWiki.text = ""
         }
         return cell
     }
