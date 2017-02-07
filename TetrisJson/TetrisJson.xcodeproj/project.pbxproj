@@ -44,6 +44,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39F1EFDE1E49ADF60062D785 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				6C519BC21E4905A8008A1DA8 /* Repository.swift */,
+				39F1EFDC1E499D720062D785 /* RepositoryCell.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		3D64BCFBB2CBECAACD4CA86B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,14 +83,13 @@
 		6C519BA91E48E7F5008A1DA8 /* TetrisJson */ = {
 			isa = PBXGroup;
 			children = (
+				39F1EFDE1E49ADF60062D785 /* Repositories */,
 				6C519BAA1E48E7F5008A1DA8 /* AppDelegate.swift */,
 				6C519BAE1E48E7F5008A1DA8 /* Main.storyboard */,
 				6C519BB11E48E7F5008A1DA8 /* Assets.xcassets */,
 				6C519BB31E48E7F5008A1DA8 /* LaunchScreen.storyboard */,
 				6C519BB61E48E7F5008A1DA8 /* Info.plist */,
 				6C519BBE1E48F238008A1DA8 /* TableViewController.swift */,
-				6C519BC21E4905A8008A1DA8 /* Repository.swift */,
-				39F1EFDC1E499D720062D785 /* RepositoryCell.swift */,
 			);
 			path = TetrisJson;
 			sourceTree = "<group>";

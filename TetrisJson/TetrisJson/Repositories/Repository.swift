@@ -21,4 +21,5 @@ class Repository {
         self.hasWiki = hasWiki
         self.size = size
     }
+    
 }
