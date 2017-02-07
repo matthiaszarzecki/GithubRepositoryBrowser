@@ -22,7 +22,7 @@
 		6C519BA71E48E7F5008A1DA8 /* TetrisJson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TetrisJson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C519BAA1E48E7F5008A1DA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C519BAF1E48E7F5008A1DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6C519BB11E48E7F5008A1DA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6C519BB11E48E7F5008A1DA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = TetrisJson/Assets/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		6C519BB41E48E7F5008A1DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C519BB61E48E7F5008A1DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C519BBE1E48F238008A1DA8 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +51,15 @@
 				39F1EFDC1E499D720062D785 /* RepositoryCell.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		39F1EFE01E49AFEB0062D785 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6C519BB11E48E7F5008A1DA8 /* Assets.xcassets */,
+				6C519BB61E48E7F5008A1DA8 /* Info.plist */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		3D64BCFBB2CBECAACD4CA86B /* Pods */ = {
@@ -83,12 +92,11 @@
 		6C519BA91E48E7F5008A1DA8 /* TetrisJson */ = {
 			isa = PBXGroup;
 			children = (
+				39F1EFE01E49AFEB0062D785 /* Assets */,
 				39F1EFDE1E49ADF60062D785 /* Repositories */,
 				6C519BAA1E48E7F5008A1DA8 /* AppDelegate.swift */,
 				6C519BAE1E48E7F5008A1DA8 /* Main.storyboard */,
-				6C519BB11E48E7F5008A1DA8 /* Assets.xcassets */,
 				6C519BB31E48E7F5008A1DA8 /* LaunchScreen.storyboard */,
-				6C519BB61E48E7F5008A1DA8 /* Info.plist */,
 				6C519BBE1E48F238008A1DA8 /* TableViewController.swift */,
 			);
 			path = TetrisJson;
@@ -352,7 +360,7 @@
 			baseConfigurationReference = 8A7026BB0CDF1C615DE8F0B9 /* Pods-TetrisJson.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TetrisJson/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TetrisJson/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthiaszarzecki.TetrisJson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -365,7 +373,7 @@
 			baseConfigurationReference = 895CB9A2FE66A7EFE61BDCAA /* Pods-TetrisJson.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TetrisJson/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TetrisJson/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthiaszarzecki.TetrisJson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
