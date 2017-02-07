@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class TableViewController: UITableViewController {
 
@@ -17,7 +18,13 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getJsonData(url: sourceUrl)
+        
+        if let url = URL(string: sourceUrl) {
+            if let data = try? Data(contentsOf: url) {
+                let json = JSON(data: data)
+                createRepositoriesFromDictionary(dictionary: json)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,39 +51,14 @@ class TableViewController: UITableViewController {
         return cell
     }
     
-    func getJsonData(url: String = "") {
-        let requestURL: NSURL = NSURL(string: sourceUrl)!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
-        let session = URLSession.shared
-        let task = session.dataTask(with: urlRequest as URLRequest) {
-            (data, response, error) -> Void in
-            
-            let httpResponse = response as! HTTPURLResponse
-            if (httpResponse.statusCode == 200) {
-                do {
-                    if let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as? [String: AnyObject] {
-                        self.createRepositoriesFromDictionary(dictionary: json)
-                    }
-                } catch let error as NSError {
-                    print(error)
-                }
-            }
-        }
-        task.resume()
-    }
     
-    func createRepositoriesFromDictionary(dictionary: [String: AnyObject]) {
-        if let items = dictionary["items"] as? [String: AnyObject] {
-            for currentItem in items {
-                let newRepository = Repository()
-//                if let name = currentItem["name"] as? String {
-//                    newRepository.name = name
-//                }
-//                if let hasWiki = currentItem["has_wiki"] as? Bool {
-//                    newRepository.hasWiki = hasWiki
-//                }
-                objects.append(newRepository)
-            }
+    func createRepositoriesFromDictionary(dictionary: JSON) {
+        let items = dictionary["items"].arrayValue
+        for currentItem in items {
+            let newRepository = Repository()
+            newRepository.name = currentItem["name"].stringValue
+            newRepository.hasWiki = currentItem["has_wiki"].boolValue
+            objects.append(newRepository)
         }
     }
     
