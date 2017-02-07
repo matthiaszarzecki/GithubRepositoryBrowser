@@ -49,7 +49,7 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String {
-        return "\(searchType)/\(searchTerm)"
+        return "\(searchType) / \(searchTerm)"
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
