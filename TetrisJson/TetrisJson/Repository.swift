@@ -10,12 +10,15 @@ import Foundation
 
 class Repository {
     
-    var name = ""
-    var userLoginName = ""
-    var hasWiki = false
+    var repositoryName: String
+    var userLoginName: String
+    var hasWiki: Bool
+    var displayName: String = ""
     
-    func getDisplayName() -> String {
-        return (name != "" || userLoginName != "") ? "\(userLoginName), \(name)" : ""
+    init(repositoryName: String = "", userLoginName: String = "", hasWiki: Bool = false) {
+        self.repositoryName = repositoryName
+        self.userLoginName = userLoginName
+        self.hasWiki = hasWiki
+        displayName = "\(userLoginName), \(repositoryName)"
     }
-    
 }

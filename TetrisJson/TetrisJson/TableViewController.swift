@@ -21,8 +21,7 @@ class TableViewController: UITableViewController {
         
         if let url = URL(string: sourceUrl) {
             if let data = try? Data(contentsOf: url) {
-                let json = JSON(data: data)
-                createRepositoriesFromDictionary(dictionary: json)
+                createRepositoriesFromDictionary(dictionary: JSON(data: data))
             }
         }
     }
@@ -44,20 +43,19 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let object = objects[(indexPath as NSIndexPath).row]
-        cell.textLabel!.text = object.getDisplayName()
+        cell.textLabel!.text = object.displayName
         if !object.hasWiki {
-            cell.backgroundColor = UIColor.gray
+            cell.backgroundColor = UIColor.init(colorLiteralRed: 0.1, green: 0.1, blue: 0.1, alpha: 0)
         }
         return cell
     }
     
+    // MARK: Internal functions
     
     func createRepositoriesFromDictionary(dictionary: JSON) {
         let items = dictionary["items"].arrayValue
         for currentItem in items {
-            let newRepository = Repository()
-            newRepository.name = currentItem["name"].stringValue
-            newRepository.hasWiki = currentItem["has_wiki"].boolValue
+            let newRepository = Repository(repositoryName: currentItem["name"].stringValue, userLoginName: currentItem["owner"]["login"].stringValue, hasWiki: currentItem["has_wiki"].boolValue)
             objects.append(newRepository)
         }
     }
