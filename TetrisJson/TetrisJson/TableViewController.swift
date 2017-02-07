@@ -71,10 +71,8 @@ class TableViewController: UITableViewController {
     // MARK: Internal functions
     
     func createRepositoriesFromDictionary(dictionary: JSON) {
-        let items = dictionary["items"].arrayValue
-        for currentItem in items {
-            let newRepository = Repository(repositoryName: currentItem["name"].stringValue, userLoginName: currentItem["owner"]["login"].stringValue, hasWiki: currentItem["has_wiki"].boolValue, size: currentItem["size"].intValue)
-            objects.append(newRepository)
+        for currentItem in dictionary["items"].arrayValue {
+            objects.append(Repository(repositoryName: currentItem["name"].stringValue, userLoginName: currentItem["owner"]["login"].stringValue, hasWiki: currentItem["has_wiki"].boolValue, size: currentItem["size"].intValue))
         }
     }
     
