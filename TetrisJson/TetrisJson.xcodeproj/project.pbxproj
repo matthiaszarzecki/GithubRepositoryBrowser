@@ -47,6 +47,8 @@
 		39F1EFDE1E49ADF60062D785 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				6C519BAE1E48E7F5008A1DA8 /* Main.storyboard */,
+				6C519BBE1E48F238008A1DA8 /* TableViewController.swift */,
 				6C519BC21E4905A8008A1DA8 /* Repository.swift */,
 				39F1EFDC1E499D720062D785 /* RepositoryCell.swift */,
 			);
@@ -104,8 +106,6 @@
 				39F1EFE01E49AFEB0062D785 /* Assets */,
 				39F1EFDE1E49ADF60062D785 /* Repositories */,
 				6C519BAA1E48E7F5008A1DA8 /* AppDelegate.swift */,
-				6C519BAE1E48E7F5008A1DA8 /* Main.storyboard */,
-				6C519BBE1E48F238008A1DA8 /* TableViewController.swift */,
 			);
 			path = TetrisJson;
 			sourceTree = "<group>";
@@ -257,6 +257,7 @@
 				6C519BAF1E48E7F5008A1DA8 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		6C519BB31E48E7F5008A1DA8 /* LaunchScreen.storyboard */ = {
