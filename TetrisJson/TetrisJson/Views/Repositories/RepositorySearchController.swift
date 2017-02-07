@@ -35,7 +35,7 @@ class RepositorySearchController: UITableViewController {
     
     func setupViewWithResults(number: Int) {
         currentResultPage += 1
-        let request = "\(baseURL)\(searchType)?q=\(searchTerm)&page=\(currentResultPage)per_page=\(numberOfResults)"
+        let request = "\(baseURL)\(searchType)?q=\(searchTerm)&page=\(currentResultPage)&per_page=\(numberOfResults)"
         print(request)
         if let url = URL(string: request) {
             if let data = try? Data(contentsOf: url) {
@@ -80,14 +80,8 @@ class RepositorySearchController: UITableViewController {
     // MARK: Internal functions
     
     func createRepositoriesFromJsonData(json: JSON, number: Int = 10, currentPage: Int) {
-        let startIndex = (currentPage - 1) * number
-        let endIndex = currentPage * number - 1
-        let data = json["items"].arrayValue
-        if endIndex <= data.count - 1 {
-            for index in startIndex...endIndex {
-                let currentItem = data[index]
-                objects.append(Repository(repositoryName: currentItem["name"].stringValue, userLoginName: currentItem["owner"]["login"].stringValue, hasWiki: currentItem["has_wiki"].boolValue, size: currentItem["size"].intValue))
-            }
+        for currentItem in json["items"].arrayValue {
+            objects.append(Repository(repositoryName: currentItem["name"].stringValue, userLoginName: currentItem["owner"]["login"].stringValue, hasWiki: currentItem["has_wiki"].boolValue, size: currentItem["size"].intValue))
         }
         tableView.reloadData()
     }
