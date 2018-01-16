@@ -9,7 +9,6 @@
 import Foundation
 
 class Repository {
-    
     var repositoryName: String
     var userLoginName: String
     var hasWiki: Bool
@@ -21,5 +20,4 @@ class Repository {
         self.hasWiki = hasWiki
         self.size = size
     }
-    
 }

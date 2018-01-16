@@ -19,7 +19,7 @@ class RepositorySearchController: UITableViewController {
     
     var objects = [Repository]()
     let formatter = ByteCountFormatter()
-    let hasWikiColor = UIColor.init(colorLiteralRed: 0.1, green: 0.1, blue: 0.1, alpha: 0)
+    let hasWikiColor = UIColor.lightGray
     
     @IBOutlet weak var searchBar: UISearchBar!
     
