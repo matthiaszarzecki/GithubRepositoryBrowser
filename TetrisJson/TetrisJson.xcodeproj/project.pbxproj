@@ -9,27 +9,27 @@
 /* Begin PBXBuildFile section */
 		39F1EFDD1E499D720062D785 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F1EFDC1E499D720062D785 /* RepositoryCell.swift */; };
 		6C519BAB1E48E7F5008A1DA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C519BAA1E48E7F5008A1DA8 /* AppDelegate.swift */; };
-		6C519BB01E48E7F5008A1DA8 /* RepositorySearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C519BAE1E48E7F5008A1DA8 /* RepositorySearch.storyboard */; };
 		6C519BB21E48E7F5008A1DA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C519BB11E48E7F5008A1DA8 /* Assets.xcassets */; };
-		6C519BB51E48E7F5008A1DA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C519BB31E48E7F5008A1DA8 /* LaunchScreen.storyboard */; };
 		6C519BBF1E48F238008A1DA8 /* RepositorySearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C519BBE1E48F238008A1DA8 /* RepositorySearchController.swift */; };
 		6C519BC31E4905A8008A1DA8 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C519BC21E4905A8008A1DA8 /* Repository.swift */; };
 		7008B227C87A24DBD62535C1 /* Pods_TetrisJson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 772C80CBC5B8264227AD5D6E /* Pods_TetrisJson.framework */; };
+		CCFE6D4C200E049300F751C0 /* RepositorySearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCFE6D4B200E049300F751C0 /* RepositorySearch.storyboard */; };
+		CCFE6D4E200E04A000F751C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCFE6D4D200E04A000F751C0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		39F1EFDC1E499D720062D785 /* RepositoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryCell.swift; path = ../Views/Repositories/RepositoryCell.swift; sourceTree = "<group>"; };
+		39F1EFDC1E499D720062D785 /* RepositoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		6C519BA71E48E7F5008A1DA8 /* TetrisJson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TetrisJson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C519BAA1E48E7F5008A1DA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6C519BAF1E48E7F5008A1DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RepositorySearch.storyboard; sourceTree = "<group>"; };
 		6C519BB11E48E7F5008A1DA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = TetrisJson/Assets/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		6C519BB41E48E7F5008A1DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C519BB61E48E7F5008A1DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C519BBE1E48F238008A1DA8 /* RepositorySearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositorySearchController.swift; path = ../Views/Repositories/RepositorySearchController.swift; sourceTree = "<group>"; };
-		6C519BC21E4905A8008A1DA8 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Repository.swift; path = ../Views/Repositories/Repository.swift; sourceTree = "<group>"; };
+		6C519BBE1E48F238008A1DA8 /* RepositorySearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorySearchController.swift; sourceTree = "<group>"; };
+		6C519BC21E4905A8008A1DA8 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		772C80CBC5B8264227AD5D6E /* Pods_TetrisJson.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TetrisJson.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		895CB9A2FE66A7EFE61BDCAA /* Pods-TetrisJson.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisJson.release.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisJson/Pods-TetrisJson.release.xcconfig"; sourceTree = "<group>"; };
 		8A7026BB0CDF1C615DE8F0B9 /* Pods-TetrisJson.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisJson.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisJson/Pods-TetrisJson.debug.xcconfig"; sourceTree = "<group>"; };
+		CCFE6D4B200E049300F751C0 /* RepositorySearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RepositorySearch.storyboard; sourceTree = "<group>"; };
+		CCFE6D4D200E04A000F751C0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,13 +47,12 @@
 		39F1EFDE1E49ADF60062D785 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				6C519BAE1E48E7F5008A1DA8 /* RepositorySearch.storyboard */,
+				CCFE6D4B200E049300F751C0 /* RepositorySearch.storyboard */,
 				6C519BBE1E48F238008A1DA8 /* RepositorySearchController.swift */,
 				6C519BC21E4905A8008A1DA8 /* Repository.swift */,
 				39F1EFDC1E499D720062D785 /* RepositoryCell.swift */,
 			);
-			name = Repositories;
-			path = ../Repositories;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		39F1EFE01E49AFEB0062D785 /* Assets */ = {
@@ -65,19 +64,10 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		39F1EFE11E49B03F0062D785 /* Launch */ = {
-			isa = PBXGroup;
-			children = (
-				6C519BB31E48E7F5008A1DA8 /* LaunchScreen.storyboard */,
-			);
-			name = Launch;
-			path = ../Launch;
-			sourceTree = "<group>";
-		};
 		39F1EFE21E49B0AE0062D785 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				39F1EFE11E49B03F0062D785 /* Launch */,
+				CCFE6D4D200E04A000F751C0 /* LaunchScreen.storyboard */,
 				39F1EFDE1E49ADF60062D785 /* Repositories */,
 			);
 			path = Views;
@@ -191,9 +181,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C519BB51E48E7F5008A1DA8 /* LaunchScreen.storyboard in Resources */,
+				CCFE6D4C200E049300F751C0 /* RepositorySearch.storyboard in Resources */,
+				CCFE6D4E200E04A000F751C0 /* LaunchScreen.storyboard in Resources */,
 				6C519BB21E48E7F5008A1DA8 /* Assets.xcassets in Resources */,
-				6C519BB01E48E7F5008A1DA8 /* RepositorySearch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,13 +196,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TetrisJson-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B69D5172DD56DA1FB11C5F51 /* [CP] Copy Pods Resources */ = {
@@ -236,9 +229,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TetrisJson/Pods-TetrisJson-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -260,27 +256,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		6C519BAE1E48E7F5008A1DA8 /* RepositorySearch.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6C519BAF1E48E7F5008A1DA8 /* Base */,
-			);
-			name = RepositorySearch.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		6C519BB31E48E7F5008A1DA8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6C519BB41E48E7F5008A1DA8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6C519BB71E48E7F5008A1DA8 /* Debug */ = {
